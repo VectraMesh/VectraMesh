@@ -1,0 +1,37 @@
+VECTRAMESH FREEWARE SOFTWARE LICENSE AGREEMENT
+
+Copyright (c) 2026 Mikhail Meltser. All rights reserved.
+
+IMPORTANT: PLEASE READ THIS LICENSE CAREFULLY BEFORE USING THIS SOFTWARE.
+
+1. GRANT OF LICENSE
+Mikhail Meltser ("Licensor") grants you ("Licensee") a non-exclusive, 
+non-transferable, royalty-free, worldwide license to install, use, and redistribute 
+the compiled binary form of VectraMesh ("Software") solely as an integrated component 
+within your own personal, academic, or commercial software applications.
+
+2. RESTRICTIONS
+You may NOT:
+(a) Decompile, disassemble, reverse engineer, or attempt to derive the source code, 
+    underlying algorithms, or mathematical structures of the Software, except to the 
+    extent expressly permitted by applicable law.
+(b) Modify, translate, adapt, or create derivative works based upon the Software.
+(c) Rent, lease, lend, sell, sublicense, or distribute the Software as a standalone 
+    library, SDK, or competing triangulation/meshing component.
+(d) Remove, alter, or obscure any copyright, trademark, or proprietary notices 
+    contained within the Software.
+
+3. INTELLECTUAL PROPERTY
+The Software is licensed, not sold. Licensor retains all right, title, and interest 
+in and to the Software, including all copyrights, patents, trade secrets, and other 
+intellectual property rights.
+
+4. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE LICENSOR BE LIABLE 
+FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+
+5. TERMINATION
+This license is effective until terminated. Your rights under this license will 
+terminate automatically without notice if you fail to comply with any of its terms.

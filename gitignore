@@ -1,0 +1,37 @@
+## Visual Studio & .NET Build Artifacts
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.nupkg
+*.snupkg
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## Test & Coverage Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+
+## Windows & macOS System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+## Safety Exclusions (Protect Closed-Source / Local Secrets)
+*.pfx
+*.cer
+*.key
+*.pem
+obfuscar.xml
+obfuscated/
