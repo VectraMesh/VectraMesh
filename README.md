@@ -2,8 +2,8 @@
 
 **VectraMesh** is a pure, lightweight 2D triangulation and topology analysis library for C# and .NET. Engineered to handle complex real-world geometry—such as winding non-convex polygons, sharp spikes, multi-level nested holes (islands inside holes), and tight tolerances—it validates segment constellations and outputs clean, well-proportioned triangle meshes where standard algorithms produce artifacts or fail.
 
-[![NuGet](https://shields.io)](https://nuget.org)
-[![License](https://shields.io)](LICENSE-FREEWARE.txt)
+[![NuGet](https://img.shields.io/nuget/v/VectraMesh.svg)](https://www.nuget.org/packages/VectraMesh)
+[![License](https://img.shields.io/badge/license-Freeware-blue.svg)](https://github.com/VectraMesh/VectraMesh/blob/main/LICENSE-FREEWARE.txt)
 
 ---
 
@@ -21,7 +21,7 @@ The VectraMesh ecosystem is separated into two components to keep integration cl
 | Capability | `VectraMesh` | `EarCut` |
 | :--- | :---: | :---: |
 | **Multi-Level Nested Holes (Islands inside Holes)** | **Built-in (`HoleLevel` hierarchy)** | Manual preprocessing required |
-| **Topological Completeness ($T = V + 2H - 2$)** | **Preserves exact triangle count** | Can collapse sliver triangles on tight multi-hole curves |
+| **Topological Completeness (T = V + 2H - 2)** | **Preserves exact triangle count** | Can collapse sliver triangles on tight multi-hole curves |
 | **Topology & Error Segment Validation** | **Built-in (`RecogniseEdges`)** | None (assumes valid rings) |
 | **Per-Triangle Quality Metric (Mean Ratio)** | **Built-in (`VmTriangle.Analyze`)** | None |
 | **Optional UI Rendering Hook** | **Built-in (`IVmPresenter`)** | None |
@@ -33,17 +33,17 @@ The VectraMesh ecosystem is separated into two components to keep integration cl
 ### 1. Multi-Level Nested Holes & Quality Diagnostics
 `VectraMesh` automatically resolves complex non-convex contours, sharp acute spikes, and **multi-level nested holes** (islands inside holes) while reporting per-triangle Area-to-Edge Mean Ratio quality (`0.69` average quality in `12 ms`):
 
-![Multi-Level Nested Holes & Quality Analysis](assets/nested-holes-showcase.png)
+![Multi-Level Nested Holes & Quality Analysis](https://raw.githubusercontent.com/VectraMesh/VectraMesh/main/assets/nested-holes-showcase.png)
 
 ### 2. Mesh Quality Benchmark: `VectraMesh` vs. `EarCut`
 On identical non-convex polygons, **`VectraMesh`** (left) generates balanced, well-proportioned triangles, whereas **`EarCut`** (right) produces long, skinny sliver triangles fanning from a single corner:
 
-![VectraMesh vs EarCut Mesh Quality Comparison](assets/vectramesh-vs-earcut.png)
+![VectraMesh vs EarCut Mesh Quality Comparison](https://raw.githubusercontent.com/VectraMesh/VectraMesh/main/assets/vectramesh-vs-earcut.png)
 
 ### 3. Multi-Hole Tracing & Topological Completeness (`VectraMesh` vs. `EarCut`)
-Using **`VectraMesh.Studio`**, you can drag-and-drop any reference image onto the canvas and trace organic silhouettes with multiple interior cutouts. On this 166-vertex contour with 2 interior holes (theoretical count $T = V + 2H - 2 = 168$ triangles), **`VectraMesh`** (left) preserves the exact **168 triangles** with balanced radial distribution, whereas **`EarCut`** (right) drops 3 sliver triangles (**165 triangles**) and creates long diagonal fans across the body:
+Using **`VectraMesh.Studio`**, you can drag-and-drop any reference image onto the canvas and trace organic silhouettes with multiple interior cutouts. On this 166-vertex contour with 2 interior holes (theoretical count T = V + 2H - 2 = 168 triangles), **`VectraMesh`** (left) preserves the exact **168 triangles** with balanced radial distribution, whereas **`EarCut`** (right) drops 3 sliver triangles (**165 triangles**) and creates long diagonal fans across the body:
 
-![Bird Contour Multi-Hole Benchmark](assets/bird-multi-hole.png)
+![Bird Contour Multi-Hole Benchmark](https://raw.githubusercontent.com/VectraMesh/VectraMesh/main/assets/bird-multi-hole.png)
 
 ---
 
@@ -102,7 +102,7 @@ public static class TriangulationExample
         engine.RecogniseEdges();
         if (!string.IsNullOrEmpty(engine.Message))
         {
-            Console.WriteLine(\$"Topology error: {engine.Message}");
+            Console.WriteLine($"Topology error: {engine.Message}");
             return;
         }
 
@@ -115,7 +115,7 @@ public static class TriangulationExample
             {
                 triangle.Analyze();
                 Console.WriteLine(
-                    \$"Triangle ({triangle.P0.Index}, {triangle.P1.Index}, {triangle.P2.Index}) - Quality: {triangle.AnalysisValue:F2}");
+                    $"Triangle ({triangle.P0.Index}, {triangle.P1.Index}, {triangle.P2.Index}) - Quality: {triangle.AnalysisValue:F2}");
             }
         }
     }
@@ -123,14 +123,14 @@ public static class TriangulationExample
 ```
 > **Important:** Always reuse the same `VmPoint` instances (`a`, `b`, `c`, `d`) at shared segment endpoints. Coordinate equality alone does not establish topological connectivity.
 
-📖 **Full API Documentation:** For complete class, method, and lifecycle details, see the **[API Reference Guide](API-REFERENCE.md)**.
+📖 **Full API Documentation:** For complete class, method, and lifecycle details, see the **[API Reference Guide](https://github.com/VectraMesh/VectraMesh/blob/main/API-REFERENCE.md)**.
 
 ---
 
 ## Download `VectraMesh.Studio` (Free WPF Testbench)
 
 Want to test your own polygons or compare `VectraMesh` against `EarCut` without writing code?
-* **[Download VectraMesh.Studio.exe (GitHub Releases)](https://github.com)**
+* **[Download VectraMesh.Studio.exe (GitHub Releases)](https://github.com/VectraMesh/VectraMesh/releases)**
 * Load a reference image (`.png`, `.jpg`, `.bmp`, `.gif`) via drag-and-drop, trace contours, inspect error segments visually, export meshes to JSON or WPF `MeshGeometry3D`, and save/load test cases as **JSON**.
 
 ---
@@ -143,10 +143,10 @@ Need curved boundaries and finer mesh control? **`VectraMesh.Pro`** is currently
 * **Adaptive Sizing Fields:** Smoothly grade triangle density across complex regions.
 * **Geometry Repair & Commercial Priority Support.**
 
-*Interested in commercial licensing, early access, or requesting specific features? Reach out via **[GitHub Discussions](https://github.com)** or email **[Vectra.Mesh@gmail.com](mailto:Vectra.Mesh@gmail.com)**.*
+*Interested in commercial licensing, early access, or requesting specific features? Reach out via **[GitHub Discussions](https://github.com/VectraMesh/VectraMesh/discussions)** or email **[Vectra.Mesh@gmail.com](mailto:Vectra.Mesh@gmail.com)**.*
 
 ---
 
 ## Repository Structure & Licenses
 * `src/VectraMesh.Studio/` – Open-source `.NET 8.0` WPF visual testbench (**MIT License**).
-* **`VectraMesh` NuGet Package** – Licensed under the **[VectraMesh Freeware License](LICENSE-FREEWARE.txt)** (free for commercial and personal use; reverse engineering prohibited).
+* **`VectraMesh` NuGet Package** – Licensed under the **[VectraMesh Freeware License](https://github.com/VectraMesh/VectraMesh/blob/main/LICENSE-FREEWARE.txt)** (free for commercial and personal use; reverse engineering prohibited).
