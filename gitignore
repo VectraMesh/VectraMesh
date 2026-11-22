@@ -1,37 +1,32 @@
 ## Visual Studio & .NET Build Artifacts
 [Bb]in/
 [Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio Cache & User Files
 .vs/
-*.user
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
-*.cache
-*.nupkg
-*.snupkg
+*.userprefs
 
-## Rider / VS Code
+## Publish Profiles & Output
+PublishProfiles/
+publish/
+
+## Rider / JetBrains
 .idea/
-.vscode/
+*.sln.iml
 
-## Test & Coverage Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
-*.trx
-*.coverage
-*.coveragexml
-
-## Windows & macOS System Files
+## Windows & macOS OS Files
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-$RECYCLE.BIN/
 .DS_Store
 
-## Safety Exclusions (Protect Closed-Source / Local Secrets)
-*.pfx
-*.cer
-*.key
-*.pem
-obfuscar.xml
-obfuscated/
+## Packaged Archives & NuGet Outputs
+*.nupkg
+*.snupkg
+*.zip

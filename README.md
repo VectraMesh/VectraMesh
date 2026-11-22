@@ -3,6 +3,7 @@
 **VectraMesh** is a pure, lightweight 2D triangulation and topology analysis library for C# and .NET. Engineered to handle complex real-world geometry—such as winding non-convex polygons, sharp spikes, multi-level nested holes (islands inside holes), and tight tolerances—it validates segment constellations and outputs clean, well-proportioned triangle meshes where standard algorithms produce artifacts or fail.
 
 [![NuGet](https://img.shields.io/nuget/v/VectraMesh.svg)](https://www.nuget.org/packages/VectraMesh)
+[![GitHub Release](https://img.shields.io/github/v/release/VectraMesh/VectraMesh?label=VectraMesh.Studio&color=blue)](https://github.com/VectraMesh/VectraMesh/releases/latest)
 [![License](https://img.shields.io/badge/license-Freeware-blue.svg)](https://github.com/VectraMesh/VectraMesh/blob/main/LICENSE-FREEWARE.txt)
 
 ---
@@ -44,6 +45,18 @@ On identical non-convex polygons, **`VectraMesh`** (left) generates balanced, we
 Using **`VectraMesh.Studio`**, you can drag-and-drop any reference image onto the canvas and trace organic silhouettes with multiple interior cutouts. On this 166-vertex contour with 2 interior holes (theoretical count T = V + 2H - 2 = 168 triangles), **`VectraMesh`** (left) preserves the exact **168 triangles** with balanced radial distribution, whereas **`EarCut`** (right) drops 3 sliver triangles (**165 triangles**) and creates long diagonal fans across the body:
 
 ![Bird Contour Multi-Hole Benchmark](https://raw.githubusercontent.com/VectraMesh/VectraMesh/main/assets/bird-multi-hole.png)
+
+---
+
+## 🖥️ Try VectraMesh.Studio (Interactive Windows Demo)
+
+Want to test your own polygons or compare `VectraMesh` against `EarCut` visually before integrating it into your codebase? Download the standalone Windows desktop app from the latest release:
+
+* **Download:** [VectraMesh.Studio-v1.0.0-win-x64.zip (Latest Release)](https://github.com/VectraMesh/VectraMesh/releases/latest)
+* **Run:** Extract the ZIP archive to any folder and launch **`VectraMesh.Studio.exe`**.
+* **Features:** Load a reference image (`.png`, `.jpg`, `.bmp`, `.gif`) via drag-and-drop, trace contours, inspect error segments visually, export meshes to JSON or WPF `MeshGeometry3D`, and save/load test cases as **JSON**.
+
+> **Note:** On first launch, Windows SmartScreen may display *"Windows protected your PC"* because this indie release is not signed with a paid Authenticode certificate. Click **More info → Run anyway** to start the app.
 
 ---
 
@@ -127,26 +140,7 @@ public static class TriangulationExample
 
 ---
 
-## Download `VectraMesh.Studio` (Free WPF Testbench)
-
-Want to test your own polygons or compare `VectraMesh` against `EarCut` without writing code?
-* **[Download VectraMesh.Studio.exe (GitHub Releases)](https://github.com/VectraMesh/VectraMesh/releases)**
-* Load a reference image (`.png`, `.jpg`, `.bmp`, `.gif`) via drag-and-drop, trace contours, inspect error segments visually, export meshes to JSON or WPF `MeshGeometry3D`, and save/load test cases as **JSON**.
-
----
-
 ## Advanced Meshing: `VectraMesh.Pro` (In Development)
 
-Need curved boundaries and finer mesh control? **`VectraMesh.Pro`** is currently in development and will extend the core engine with commercial-grade capabilities while keeping the `VectraMesh` namespace unchanged:
-* **Bezier & Curved Segments:** Native support for quadratic and cubic Bezier curves, circular arcs, and adaptive tessellation across mixed straight and curved boundaries.
-* **Quality Mesh Refinement:** Enforce minimum interior angles and maximum triangle areas.
-* **Adaptive Sizing Fields:** Smoothly grade triangle density across complex regions.
-* **Geometry Repair & Commercial Priority Support.**
-
-*Interested in commercial licensing, early access, or requesting specific features? Reach out via **[GitHub Discussions](https://github.com/VectraMesh/VectraMesh/discussions)** or email **[Vectra.Mesh@gmail.com](mailto:Vectra.Mesh@gmail.com)**.*
-
----
-
-## Repository Structure & Licenses
-* `src/VectraMesh.Studio/` – Open-source `.NET 8.0` WPF visual testbench (**MIT License**).
-* **`VectraMesh` NuGet Package** – Licensed under the **[VectraMesh Freeware License](https://github.com/VectraMesh/VectraMesh/blob/main/LICENSE-FREEWARE.txt)** (free for commercial and personal use; reverse engineering prohibited).
+Need curved boundaries or automated cleanup of imperfect input drawings? **`VectraMesh.Pro`** is currently in development and will extend the core engine while keeping the `VectraMesh` namespace unchanged:
+* **Curved & Interpolating Segments:** Smooth curves and circular arcs passing directly through user-defined control points, combined with adaptive tessellation across mixed straight and curved boundaries.
