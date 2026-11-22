@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>VectraMesh.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="VectraMesh.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Earcut.NET" Version="1.2.0" />
